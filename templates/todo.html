@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>HouseMate | Home</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">HouseMate</a></li>
+            <li><a href="todo.html">To-Do List</a></li>
+            <li><a href="completed.html">Completed Tasks</a></li>
+            <li><a href="leaderboard.html">Leaderboard</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+    <div>
+        <h2>To Do List:</h2>
+        <form method="post">
+            <label for="task">Add a new task</label>
+            <input type="text" name="task" required>
+            <button type="submit">Add Task</button>
+        </form>
+        <ul>
+            {% for task in tasks %}
+            <li>
+                {{ task.task }} (added by {{ task.added_by}})
+                <form method="post" class="complete-task-form">
+                    <!-- TODO: Need to add complete task functionality in app.py to have as action in form -->
+                    <button type="submit">Complete</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
