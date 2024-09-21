@@ -27,10 +27,10 @@
             {% for task in tasks %}
             <li>
                 {{ task.task }} (added by {{ task.added_by }})
-                <form method="post" class="complete-task-form">
-                    <!-- TODO: Need to add complete task functionality in app.py to have as action in form -->
+                <form method="post" action="{{ url_for('complete_task', task_index=loop.index0) }}" class="complete-task-form">
                     <button type="submit">Complete</button>
                 </form>
+                <!-- TODO: Add functionality to remove the completed task from the list on this page -->
             </li>
             {% endfor %}
         </ul>
