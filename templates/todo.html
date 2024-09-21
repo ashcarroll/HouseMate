@@ -26,12 +26,13 @@
         <ul>
             {% for task in tasks %}
             <li>
-                {{ task.task }} (added by {{ task.added_by}})
+                {{ task.task }} (added by {{ task.added_by }})
                 <form method="post" class="complete-task-form">
                     <!-- TODO: Need to add complete task functionality in app.py to have as action in form -->
                     <button type="submit">Complete</button>
                 </form>
             </li>
+            {% endfor %}
         </ul>
     </div>
 </body>

@@ -19,7 +19,7 @@ def todo():
     if request.method == 'POST':
         task = request.form['task']
         if task.strip():
-            tasks.append({'task':task, 'added by': session['username']})
+            tasks.append({'task':task, 'added_by': session['username']})
     return render_template('todo.html', tasks=tasks)
 
 if __name__ == '__main__':

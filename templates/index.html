@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="\static\style.css">
     <title>HouseMate | Home</title>
 </head>
 <body>
@@ -16,12 +16,18 @@
             <li><a href="about.html">About</a></li>
         </ul>
     </nav>
-    <div>
-        <form action="{{url_for('set_name')}}" method="post">
-        <label for="name">What is your name?</label>
-        <input type="text" name="name" required>
-        <button type="submit">Enter</button>
-        </form>
-    </div>
+    <main>
+        <h1>TEST</h1>
+        <div>
+            <form action="{{url_for('set_name')}}" method="post">
+            <label for="name">What is your name?</label>
+            <input type="text" name="name" required>
+            <button type="submit">Enter</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <a href="https://www.freepik.com/free-photo/overhead-view-spray-bottle-sponge-yellow-backdrop_4822625.htm#fromView=search&page=1&position=6&uuid=5a7f5fbc-b00e-4f9b-9dc7-9e06dedc633e">Image by freepik</a>
+    </footer>
 </body>
 </html>
