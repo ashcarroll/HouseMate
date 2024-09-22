@@ -30,7 +30,6 @@
                 <form method="post" action="{{ url_for('complete_task', task_index=loop.index0) }}" class="complete-task-form">
                     <button type="submit">Complete</button>
                 </form>
-                <!-- TODO: Add functionality to remove the completed task from the list on this page -->
             </li>
             {% endfor %}
         </ul>
