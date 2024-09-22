@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\static\style.css">
+    <title>HouseMate | Home</title>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">HouseMate</a>
+        <a href="{{ url_for('todo') }}">To-Do List</a>
+        <a href="{{ url_for('completed') }}">Completed Tasks</a>
+        <a href="{{ url_for('leaderboard') }}">Leaderboard</a>
+        <a href="{{ url_for('about') }}">About</a>
+    </nav>
+    <main>
+        <h2>Completed Tasks</h2>
+        <ul>
+            {% for task in completed_tasks %}
+            <li>
+                {{ task.task }} (completed by {{ task.completed_by }})
+            </li>
+            {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>

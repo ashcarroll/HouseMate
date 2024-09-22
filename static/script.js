@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', initialise);
 
 function initialise() {
-    let completeTask = document.querySelectorAll('.complete-task-form')
+    let completeTask = document.querySelectorAll('.complete-task-form');
 
     completeTask.forEach(function(form) {
         form.addEventListener('submit', formSubmit);
-    });
+    })
 }
 
 function formSubmit(event) {
@@ -19,7 +19,7 @@ function submitTaskToServer(form) {
     let fetchOptions = {
         method: 'POST',
         body: getTaskInfo(form)
-    };
+    }
 
     fetch(form.action, fetchOptions)
         .then(function(response) {
@@ -28,18 +28,17 @@ function submitTaskToServer(form) {
 }
 
 function getTaskInfo(form) {
-    return new URLSearchParams(new TaskInfo(form));
+    return new URLSearchParams(new FormData(form));
 }
 
 function handleResponse(response, form) {
     if (response.status === 204) {
         removeCompletedTask(form);
-    } 
-        else {
-            console.error('Unexpected status:', response.status);
+    } else {
+        console.error('Unexpected status:', response.status);
     }
 }
 
-function removeCompletedTask {
+function removeCompletedTask(form) {
     form.parentElement.remove();
 }

@@ -7,7 +7,7 @@ tasks = []
 completed_tasks = []
 
 @app.route('/')
-def home():
+def index():
     return render_template('index.html')
 
 @app.route('/set_name', methods=['POST'])
@@ -28,7 +28,19 @@ def complete_task(task_index):
     completed_task = tasks.pop(task_index)
     completed_task['completed_by'] = session ['username']
     completed_tasks.append(completed_task)
-    return ('', 204)
+    return '', 204
+
+@app.route('/completed')
+def completed():
+    return render_template('completed.html', completed_tasks=completed_tasks)
+
+@app.route('/leaderboard')
+def leaderboard():
+    return render_template('leaderboard.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
