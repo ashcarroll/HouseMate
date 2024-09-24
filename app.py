@@ -5,6 +5,7 @@ app.secret_key = 'a_secret_lock'
 
 tasks = []
 completed_tasks = []
+scores = {}
 
 @app.route('/')
 def index():
@@ -28,6 +29,9 @@ def complete_task(task_index):
     completed_task = tasks.pop(task_index)
     completed_task['completed_by'] = session ['username']
     completed_tasks.append(completed_task)
+
+    scores.setdefault(session['username'], 0)
+    scores[session['username']] += 1
     return '', 204
 
 @app.route('/completed')
@@ -36,7 +40,8 @@ def completed():
 
 @app.route('/leaderboard')
 def leaderboard():
-    return render_template('leaderboard.html')
+    sorted_scores = (sorted(scores.items(), key=lambda item:item[1]))
+    return render_template('leaderboard.html', housemate = sorted_scores)
 
 @app.route('/about')
 def about():
