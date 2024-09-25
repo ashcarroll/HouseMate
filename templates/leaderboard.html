@@ -14,10 +14,12 @@
         <a href="{{ url_for('leaderboard') }}">Leaderboard</a>
         <a href="{{ url_for('about') }}">About</a>
     </nav>
-
     <main>
-        <h1>Leaderboard</h1>
         <div>
+            <img src="{{ url_for('static', filename='background_img.jpg')}}" alt="overhead view of spray bottle & sponge on a yellow backdrop" class="background_img">
+        </div>
+        <h1>Leaderboard</h1>
+        <div class="content_container">
             <table>
                 <tr>
                     <th>Name</th>

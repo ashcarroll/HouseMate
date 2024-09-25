@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="\static\style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>HouseMate | Home</title>
 </head>
 <body>
@@ -16,13 +16,18 @@
     </nav>
     <main>
         <h2>Completed Tasks</h2>
-        <ul>
-            {% for task in completed_tasks %}
-            <li>
-                {{ task.task }} (completed by {{ task.completed_by }})
-            </li>
-            {% endfor %}
-        </ul>
+        <div>
+            <img src="{{ url_for('static', filename='background_img.jpg')}}" alt="overhead view of spray bottle & sponge on a yellow backdrop" class="background_img">
+        </div>
+        <div>
+            <ul>
+                {% for task in completed_tasks %}
+                <li>
+                    {{ task.task }} (completed by {{ task.completed_by }})
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
     </main>
 </body>
 </html>
