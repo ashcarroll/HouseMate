@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>HouseMate | Home</title>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}" class="active">HouseMate</a>
+        <a href="{{ url_for('todo') }}">To-Do List</a>
+        <a href="{{ url_for('completed') }}">Completed Tasks</a>
+        <a href="{{ url_for('leaderboard') }}">Leaderboard</a>
+        <a href="{{ url_for('about') }}" class="active">About</a>
+    </nav>
+
+    <main>
+        <div>
+            <img src="{{ url_for('static', filename='background_img.jpg')}}" alt="overhead view of spray bottle & sponge on a yellow backdrop" class="background_img">
+        </div>
+        <h2>About</h2>
+        <div class="content_container">
+            <h4>About HouseMate</h4>
+            <p>HouseMate is a household chore tracker.</p>
+            <p>It is a fun and easy way for housemates or families to organise and share household tasks.</p>
+            <p> You can add chores to the to-do list for everyone to see, see who has requested each chore, and keep track of who has completed them. </p>
+            <p> With the leaderboard, it makes a game of managing chores making it more fun for everyone! </p>
+        </div>
+    </main>
+    <footer>
+        <a href="https://www.freepik.com/free-photo/overhead-view-spray-bottle-sponge-yellow-backdrop_4822625.htm#fromView=search&page=1&position=6&uuid=5a7f5fbc-b00e-4f9b-9dc7-9e06dedc633e">Image by freepik</a>
+    </footer>
+</body>
+</html>

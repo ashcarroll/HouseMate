@@ -10,7 +10,7 @@
     <nav>
         <a href="{{ url_for('index') }}">HouseMate</a>
         <a href="{{ url_for('todo') }}">To-Do List</a>
-        <a href="{{ url_for('completed') }}">Completed Tasks</a>
+        <a href="{{ url_for('completed') }}" class="active">Completed Tasks</a>
         <a href="{{ url_for('leaderboard') }}">Leaderboard</a>
         <a href="{{ url_for('about') }}">About</a>
     </nav>
@@ -19,8 +19,8 @@
         <div>
             <img src="{{ url_for('static', filename='background_img.jpg')}}" alt="overhead view of spray bottle & sponge on a yellow backdrop" class="background_img">
         </div>
-        <div>
-            <ul>
+        <div class="content_container">
+            <ul class="completed-task-list">
                 {% for task in completed_tasks %}
                 <li>
                     {{ task.task }} (completed by {{ task.completed_by }})
@@ -29,5 +29,8 @@
             </ul>
         </div>
     </main>
+    <footer>
+        <a href="https://www.freepik.com/free-photo/overhead-view-spray-bottle-sponge-yellow-backdrop_4822625.htm#fromView=search&page=1&position=6&uuid=5a7f5fbc-b00e-4f9b-9dc7-9e06dedc633e">Image by freepik</a>
+    </footer>
 </body>
 </html>

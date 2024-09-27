@@ -11,20 +11,23 @@
         <a href="{{ url_for('index') }}">HouseMate</a>
         <a href="{{ url_for('todo') }}">To-Do List</a>
         <a href="{{ url_for('completed') }}">Completed Tasks</a>
-        <a href="{{ url_for('leaderboard') }}">Leaderboard</a>
+        <a href="{{ url_for('leaderboard') }}" class="active">Leaderboard</a>
         <a href="{{ url_for('about') }}">About</a>
     </nav>
     <main>
         <div>
             <img src="{{ url_for('static', filename='background_img.jpg')}}" alt="overhead view of spray bottle & sponge on a yellow backdrop" class="background_img">
         </div>
-        <h1>Leaderboard</h1>
+        <h2>Leaderboard</h2>
         <div class="content_container">
             <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Completed Tasks</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Completed Tasks</th>
+                    </tr>
+                </thead>
+                <tbody>
                 <tr>
                     {% for housemate, score in housemate %}
                 </tr>
@@ -33,6 +36,7 @@
                     <td>{{ score }} </td>
                 </tr>
                 {% endfor %}
+                </tbody>
             </table>
         </div>
     </main>
