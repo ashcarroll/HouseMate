@@ -18,6 +18,9 @@ def set_name():
 
 @app.route('/todo', methods=['GET', 'POST'])
 def todo():
+    if 'username' not in session:
+        return redirect(url_for('index'))
+    
     if request.method == 'POST':
         task = request.form['task']
         if task.strip():

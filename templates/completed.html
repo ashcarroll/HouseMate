@@ -25,6 +25,8 @@
                 <li>
                     {{ task.task }} (completed by {{ task.completed_by }})
                 </li>
+                {% else %}
+                <p>There are no completed tasks yet</p>
                 {% endfor %}
             </ul>
         </div>
