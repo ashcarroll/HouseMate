@@ -55,7 +55,7 @@ nav a:hover {
 
 /* Universal header styling */
 
-.title {
+.heading {
     position: static;
     text-align: center;
     margin-top: 20px;
@@ -223,6 +223,18 @@ footer a:hover {
     background-color: #A2C6E7;
 }
 
+/* Completed Tasks Styling */
+
+.completed-task-list li {
+    color: #000;
+    font-size: 16px;
+    line-height: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
 /* Leaderboard Styling */
 
 table {
@@ -348,6 +360,18 @@ p {
         margin-top: 10px;
         margin-bottom: 20px;
     }
+
+    .completed-task-list li {
+        color: #000;
+        font-size: 14px;
+        line-height: 21.5px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 10px;
+        margin-bottom: 5px;
+        margin-right: 5px;
+    }
+    
 }
 
 @media (max-width:450px) {

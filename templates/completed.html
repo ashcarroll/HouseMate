@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>HouseMate | Home</title>
+    <title>HouseMate | Completed Tasks</title>
 </head>
 <body>
     <nav>
@@ -15,12 +15,12 @@
         <a href="{{ url_for('about') }}">About</a>
     </nav>
     <main>
-        <h2 class="title">Completed Tasks</h2>
+        <h2 class="heading">Completed Tasks</h2>
         <div class="content_container">
             <ul class="completed-task-list">
                 {% for task in completed_tasks %}
                 <li>
-                    {{ task.task }} (completed by {{ task.completed_by }})
+                    &#9900 {{ task.task }} (completed by {{ task.completed_by }})
                 </li>
                 {% else %}
                 <p>There are no completed tasks yet</p>
